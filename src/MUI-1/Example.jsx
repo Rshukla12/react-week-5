@@ -7,6 +7,8 @@ import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import MenuItem from "@mui/material/MenuItem";
+import AppBar from "@mui/material/AppBar";
+import Modal from "@mui/material/Modal";
 import { makeStyles } from "@mui/styles";
 
 import Upload from "@mui/icons-material/Upload";
@@ -42,6 +44,7 @@ const Example = () => {
     const [isChecked, setIsChecked] = React.useState(false);
     const [name, setName] = React.useState("");
     const [country, setCountry] = React.useState("");
+    const [isOpen, setIsOpen] = React.useState(false);
     const classes = useStyles();   
     return (
         <Container maxWidth="xl" className="App">
@@ -105,10 +108,19 @@ const Example = () => {
             </Container>
 
             
-            {/* Problem 3 */}
+            {/* Problem 4 */}
 
             <Container>
-
+            {/* Problem 4
+use AppBar, ( add style marginTop to the children container ensure that the elements below the appbar are seen since its probably using position fixed )
+use a modal and show and hide content
+look at components similar to modal, like popover, portal etc. */}
+                <AppBar onClick={()=>setIsOpen(true)}>
+                    Hello Open With a click over here
+                </AppBar>
+                    <Modal open={isOpen} onClose={()=>setIsOpen(false)}>
+                        <Paper>Hello there!</Paper>
+                    </Modal>
             </Container>
         </Container>
     );
