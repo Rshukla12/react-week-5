@@ -1,12 +1,14 @@
 // import RecipeSearch from './Api/RecipeSearch';
 import './App.css';
-import Example from './MUI-1/Example';
+import AllRoutes from './MUI - Todo/Routes/AllRoutes';
+// import Example from './MUI-1/Example';
 
 function App() {
   return (
     <div className="App">
       {/* <RecipeSearch />       */}
-      <Example />
+      {/* <Example /> */}
+      <AllRoutes />
     </div>
   );
 }
